@@ -27,9 +27,9 @@
 
 ## 🎬 DEMO VIDEO
 
-<video src="./public/claimkaro-demo.mp4" controls width="100%"></video>
+<video src="./public/claimkaro final.mp4" controls width="100%"></video>
 
-> Can't play the video above? [Watch / download the DEMO VIDEO](./public/claimkaro-demo.mp4)
+> Can't play the video above? [Watch / download the DEMO VIDEO](./public/claimkaro%20final.mp4)
 
 <br />
 
