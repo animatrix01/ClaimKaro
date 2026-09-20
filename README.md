@@ -27,9 +27,7 @@
 
 ## 🎬 DEMO VIDEO
 
-<video src="./public/claimkaro final.mp4" controls width="100%"></video>
-
-> Can't play the video above? [Watch / download the DEMO VIDEO](./public/claimkaro%20final.mp4)
+https://github.com/user-attachments/assets/3375c7a4-c197-47ca-a667-6bf897510ef6
 
 <br />
 
