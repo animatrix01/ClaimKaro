@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F5F5DC;
+  --foreground: #232A33;
+  --surface: #FFFFFF;
+  --muted: #5B6470;
+  --line: #E3E0CF;
+  --brand: #2563EB;
+  --brand-hover: #1D4ED8;
+  --mint: #EFF4FF;
+  --mint-border: #C9D9FB;
+  --accent: #2563EB;
+  --amber-soft: #FBF3E2;
+  --amber-line: #EBD9AE;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-green: #2563EB;
+  --color-brand-green-hover: #1D4ED8;
+  --color-mint-bg: #EFF4FF;
+  --color-mint-border: #C9D9FB;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Manrope', 'Noto Sans Devanagari', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Devanagari rhythm parity: Hindi text runs taller, so loosen line-height
+   and slightly raise weight to match English optical density. */
+html[lang="hi"] body,
+html[lang="hi"] body *,
+:lang(hi) {
+  line-height: 1.75;
+}
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3 {
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* ---- ClaimKaro unified theme primitives (one theme everywhere) ---- */
+.hs-page {
+  background-color: var(--background);
+  /* faint grey 4rem x 4rem grid overlaid across the entire screen */
+  background-image:
+    linear-gradient(to right, rgba(35, 42, 51, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 42, 51, 0.09) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.hs-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(35, 42, 51, 0.05), 0 8px 24px rgba(35, 42, 51, 0.05);
+}
+
+.hs-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  background: var(--mint);
+  border: 1px solid var(--mint-border);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+}
+
+.hs-section-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.hs-h1 {
+  color: var(--foreground);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hs-accent {
+  color: var(--accent);
+}
+
+.hs-sub {
+  color: var(--muted);
+}
+
+.hs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.85rem 1.7rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.hs-btn-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.33);
+}
+.hs-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.hs-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1rem;
+  border-radius: 9999px;
+  transition: background 0.15s ease;
+}
+.hs-btn-ghost:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.hs-input {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #FFFDF4;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.hs-input:focus {
+  border-color: var(--brand);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.hs-step-num {
+  display: grid;
+  place-items: center;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--mint);
+  border: 1px solid var(--mint-border);
+  color: var(--brand);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+/* Subtle reasoning-trace connector line */
+.trace-step {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.trace-step::before {
+  content: "";
+  position: absolute;
+  left: 0.32rem;
+  top: 0.55rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #2563EB;
+}
+.trace-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0.59rem;
+  top: 1.1rem;
+  bottom: -0.4rem;
+  width: 1px;
+  background: #C9D9FB;
+}
+
+/* Page entrance slide-up/fade animation */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-page-enter {
+  animation: pageEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+/* Bounce-in animation for important elements */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-interaction helpers */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+.click-scale {
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.click-scale:active {
+  transform: scale(0.96);
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-ring {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Printable application kit */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  main { max-width: 100% !important; padding: 0 !important; }
+  section { box-shadow: none !important; break-inside: avoid; border: 1px solid #e2e8f0; }
+  details { display: block; }
+  details > div { display: block !important; }
+}
