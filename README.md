@@ -1,3 +1,5 @@
+<div align="right"><strong>HACK DEVENGERS 2.0</strong></div>
+
 <div align="center">
 
 <img src="./public/logo.png" alt="ClaimKaro Logo" width="120" height="120" />
@@ -20,6 +22,14 @@
 ---
 
 </div>
+
+<br />
+
+## 🎬 DEMO VIDEO
+
+<video src="./public/claimkaro-demo.mp4" controls width="100%"></video>
+
+> Can't play the video above? [Watch / download the DEMO VIDEO](./public/claimkaro-demo.mp4)
 
 <br />
 
